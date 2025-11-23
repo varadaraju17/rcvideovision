@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-primary text-slate-light font-sans antialiased selection:bg-accent selection:text-navy-dark;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-white font-bold;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-navy-light/70 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  
+  .glass-hover {
+    @apply hover:bg-navy-lighter/80 transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-white;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-navy-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-navy-lighter rounded-full border-2 border-navy-dark;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-light;
+}
+
+/* Masonry Grid Styles */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -30px;
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px;
+  background-clip: padding-box;
+}
+.my-masonry-grid_column > div {
+  margin-bottom: 30px;
+}
