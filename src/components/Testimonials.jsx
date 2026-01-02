@@ -4,21 +4,21 @@ import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "RC Video Vision delivered a flawless hybrid summit. The livestream quality and on-site sound mix were outstanding, and their team was incredibly professional.",
-    name: "Priya Sharma",
-    title: "Event Director, Innovate Corp",
+    quote: "RC Video Vision transformed our annual convocation into a world-class digital experience. Their precision in live streaming and stage handling was impeccable.",
+    name: "Dr. Chenraj Roychand",
+    title: "Chairman, Jain Group of Institutions",
     rating: 5
   },
   {
-    quote: "The lighting and projection mapping transformed our product launch. Every visual cue landed perfectly, creating a high-energy atmosphere that captivated the audience.",
-    name: "Arjun Mehta",
-    title: "Head of Product, TechWave",
+    quote: "For our mega show launch, we needed absolute perfection in lighting and visuals. The team delivered a visually stunning spectacle that captivated our audience.",
+    name: "Raghavendra Hunsur",
+    title: "Business Head, Zee Kannada",
     rating: 5
   },
   {
-    quote: "For our annual awards gala, their team's attention to detail was second to none. The stage design and AV execution were simply spectacular. Highly recommended.",
-    name: "Anika Reddy",
-    title: "Marketing VP, Global Finance Inc.",
+    quote: "A seamless execution of our national product launch. From the LED displays to the sound engineering, everything felt premium and professional.",
+    name: "Samir Modi",
+    title: "Managing Director, Modicare",
     rating: 5
   }
 ];
@@ -46,7 +46,7 @@ const Testimonials = () => {
           <h2 className="text-3xl lg:text-5xl font-heading font-bold text-white mb-6">Client Stories</h2>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-slate mt-4 max-w-2xl mx-auto">
-            We are proud to partner with industry leaders to create exceptional events.
+            Trusted by India's biggest brands to deliver excellence on every stage.
           </p>
         </motion.div>
 

@@ -16,7 +16,7 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="inline-block mb-4 px-4 py-1 rounded-full border border-accent/30 bg-accent/10 text-accent font-medium text-sm tracking-wider uppercase">
@@ -26,14 +26,30 @@ const About = () => {
               Transforming Events <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Into Experiences</span>
             </h2>
-            <p className="text-lg text-slate leading-relaxed mb-6">
-              RC Video Vision is a leading provider of professional corporate event services, specializing in cutting-edge audiovisual solutions that elevate your brand and engage your audience.
+            <p className="text-lg text-slate-light leading-relaxed mb-6">
+              RC Video Vision is India's premier partner for corporate event production. Headquartered in Bengaluru and operating nationwide, we blend creativity with technical precision to deliver audiovisual experiences that resonate globally. From intimate board meetings to large-scale international summits, we bring a level of professionalism and polish that sets your brand apart.
             </p>
-            <p className="text-lg text-slate leading-relaxed">
-              With over 25 years of industry experience, our team of experts delivers seamless execution for conferences, product launches, galas, and corporate gatherings of all sizes.
+            <p className="text-lg text-slate-light leading-relaxed mb-8">
+              With over 15 years of expertise, we ensure seamless execution for conferences, galas, and product launches across all major Indian cities. Our team of seasoned engineers and creative directors work tirelessly to turn your vision into a flawless reality, leveraging the latest technology in video, sound, and lighting.
             </p>
 
-            <div className="grid grid-cols-2 gap-8 mt-12">
+            {/* Mission & Vision */}
+            <div className="grid sm:grid-cols-2 gap-6 mb-12">
+              <div className="bg-white/5 p-6 rounded-xl border border-white/10">
+                <h4 className="text-xl font-bold text-white mb-2">Our Mission</h4>
+                <p className="text-slate-light text-sm leading-relaxed">
+                  To empower brands by delivering flawless, high-impact event experiences through innovative technology and unwavering dedication to quality.
+                </p>
+              </div>
+              <div className="bg-white/5 p-6 rounded-xl border border-white/10">
+                <h4 className="text-xl font-bold text-white mb-2">Our Vision</h4>
+                <p className="text-slate-light text-sm leading-relaxed">
+                  To be the undisputed leader in event production across India, recognized for our commitment to quality, innovation, and client success.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-8">
               {[
                 { number: 15, label: 'Years Experience', suffix: '+' },
                 { number: 500, label: 'Events Delivered', suffix: '+' },
@@ -55,7 +71,7 @@ const About = () => {
             className="space-y-8"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }} // Trigger earlier on mobile
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-accent/10 group">

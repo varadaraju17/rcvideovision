@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Modal from 'react-modal';
 import Masonry from 'react-masonry-css';
-import { X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn, ArrowRight } from 'lucide-react';
 
 // Helper to format folder names into titles
 const formatCategoryName = (slug) => {
@@ -68,7 +68,7 @@ const Portfolio = ({ setIsPortfolioModalOpen }) => {
           categories[slug].thumbnail = '/assets/images/hero-poster.png';
         }
       }
-      setPortfolioCategories(Object.values(categories));
+      setPortfolioCategories(Object.values(categories).filter(c => c.slug !== 'product-launches'));
     };
     fetchMedia();
   }, []);
@@ -118,25 +118,31 @@ const Portfolio = ({ setIsPortfolioModalOpen }) => {
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.1 }}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              className="group relative z-10 overflow-hidden rounded-xl cursor-pointer shadow-lg bg-navy-dark border border-white/5"
+              className="group relative bg-navy-light/30 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(100,255,218,0.1)] flex flex-col"
               onClick={() => openModal(category)}
             >
-              <div className="relative h-96 overflow-hidden">
-                <div className="absolute inset-0 bg-navy-dark/40 group-hover:bg-navy-dark/20 transition-colors duration-300 z-10"></div>
-                <img src={category.thumbnail} alt={category.name} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+              {/* Gradient Border Glow */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                  <div className="w-16 h-16 bg-accent/90 rounded-full flex items-center justify-center text-navy-dark shadow-lg transform scale-50 group-hover:scale-100 transition-transform duration-300">
-                    <ZoomIn size={32} />
-                  </div>
-                </div>
+              {/* Image Section */}
+              <div className="h-56 overflow-hidden relative flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-accent/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                <img src={category.thumbnail} alt={category.name} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
               </div>
 
-              <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-navy-dark to-transparent z-20">
-                <h3 className="text-2xl font-heading font-bold text-white group-hover:text-accent transition-colors">{category.name}</h3>
-                <p className="text-sm text-slate-light mt-1">{category.media.length} items</p>
+              {/* Content Section */}
+              <div className="p-8 flex flex-col flex-grow relative z-20">
+                <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-accent transition-colors drop-shadow-md">{category.name}</h3>
+
+                <div className="pt-6 border-t border-white/10 flex items-center justify-between mt-auto">
+                  <button
+                    className="text-sm font-medium text-white hover:text-accent transition-colors flex items-center gap-2 group/btn"
+                  >
+                    <span className="border-b border-transparent group-hover/btn:border-accent transition-all">View Gallery</span>
+                    <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </div>
               </div>
             </motion.div>
           ))}

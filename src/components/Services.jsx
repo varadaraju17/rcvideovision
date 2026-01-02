@@ -9,44 +9,44 @@ const servicesData = [
   {
     title: 'Video Production & Streaming',
     image: '/assets/images/services/video.png',
-    description: 'Crystal-clear 4K multi-camera production and reliable, low-latency streaming to global audiences on any platform.',
+    description: 'Broadcast-quality 4K production and reliable global streaming to reach your audience anywhere.',
     features: ['4K/8K Cinematic Cameras', 'Live Multi-Cam Switching', 'Global CDN Streaming', 'Branded Video Portals', 'Post-Event Editing'],
-    details: 'We provide end-to-end video production services, ensuring your event is captured with cinematic quality. Our streaming solutions are robust, secure, and scalable to any audience size.'
+    details: 'We provide end-to-end video production services, ensuring your event is captured with cinematic quality. Our streaming solutions are robust, secure, and scalable to any audience size. Perfect for hybrid events, town halls, and international summits where reliability is paramount.'
   },
   {
     title: 'Immersive Sound Systems',
     image: '/assets/images/services/sound.png',
-    description: 'Pristine audio engineered for clarity and impact, ensuring every word is heard, from the front row to the back.',
+    description: 'Crystal-clear audio engineered for impact, ensuring every word and note is heard with precision.',
     features: ['D&B Line Array Systems', 'Shure Digital Wireless Mics', 'Dante Audio Networking', 'Acoustic Modeling', 'Breakout Room Solutions'],
-    details: 'Our audio engineers design custom soundscapes for every venue, using top-tier equipment to deliver crystal-clear speech and powerful music reproduction.'
+    details: 'Our audio engineers design custom soundscapes for every venue, using top-tier equipment to deliver crystal-clear speech and powerful music reproduction. We ensure every attendee, from the front row to the back, experiences the same high-fidelity sound.'
   },
   {
     title: 'Dynamic Lighting Design',
     image: '/assets/images/services/lighting.png',
-    description: 'Transform your venue with intelligent lighting that creates atmosphere, directs focus, and brings your brand to life.',
+    description: 'Intelligent lighting that transforms venues, creates atmosphere, and brings your brand to life.',
     features: ['Automated Moving Lights', 'LED Video Wall Integration', 'Custom Gobos & Branding', 'Architectural Uplighting', 'MA GrandMA3 Consoles'],
-    details: 'From subtle ambient lighting to high-energy light shows, our designers use light to tell your brand story and create immersive environments.'
+    details: 'From subtle ambient lighting to high-energy light shows, our designers use light to tell your brand story and create immersive environments. We synchronize lighting with video and audio for a cohesive, theatrical experience.'
   },
   {
     title: 'Projection & LED Walls',
     image: '/assets/images/services/projection.png',
-    description: 'Deliver your message on a massive scale with ultra-bright laser projectors and seamless high-resolution LED video walls.',
+    description: 'Stunning visuals with ultra-bright projection and seamless LED walls for massive impact.',
     features: ['4K Laser Projection', '3D Projection Mapping', 'Seamless LED Video Walls', 'Watchout & Resolume Servers', 'Interactive Content Design'],
-    details: 'We offer the latest in visual display technology, including curved LED walls and projection mapping that turns ordinary surfaces into dynamic canvases.'
+    details: 'We offer the latest in visual display technology, including curved LED walls and projection mapping that turns ordinary surfaces into dynamic canvases. Our high-resolution displays ensure your presentations and visuals look crisp and vibrant.'
   },
   {
     title: 'Staging & Truss Systems',
     image: '/assets/images/services/truss.png',
-    description: 'The structural backbone of your event. We provide safe, certified, and creative staging and rigging solutions.',
+    description: 'Safe, certified staging solutions that provide a creative and structural backbone for your event.',
     features: ['Custom Stage Design', 'Eurotruss Rigging Systems', 'Load-bearing Analysis', 'Branded Stage Backdrops', 'Safety & Certification'],
-    details: 'Safety is our priority. Our certified riggers and stage builders create custom structures that are both visually stunning and structurally sound.'
+    details: 'Safety is our priority. Our certified riggers and stage builders create custom structures that are both visually stunning and structurally sound. We design stages that not only look great but also facilitate smooth event flow.'
   },
   {
     title: 'Full-Service AV Management',
     image: '/assets/images/services/av.png',
-    description: 'Your single point of contact for all technical needs, from initial design and planning to flawless on-site execution.',
+    description: 'Flawless technical execution with dedicated project management for a stress-free experience.',
     features: ['Dedicated Project Manager', '3D Event Visualization', 'Technical Direction', 'On-site Support Crew', 'Global Logistics'],
-    details: 'Leave the technical details to us. Our project managers oversee every aspect of the AV production, ensuring a stress-free experience for you.'
+    details: 'Leave the technical details to us. Our project managers oversee every aspect of the AV production, ensuring a stress-free experience for you. From initial CAD drawings to the final cue, we manage the entire technical workflow.'
   },
 ];
 
@@ -91,8 +91,8 @@ const Services = () => {
         >
           <h2 className="text-3xl lg:text-5xl font-heading font-bold text-white mb-6">Our Services</h2>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-slate max-w-3xl mx-auto leading-relaxed">
-            Comprehensive Event Technology. We provide a complete suite of services to ensure your event is a technical and creative masterpiece.
+          <p className="text-lg text-slate-light max-w-3xl mx-auto leading-relaxed">
+            We deliver a comprehensive suite of high-end event technology, from cinematic video and crystal-clear audio to immersive lighting and dynamic LED displays. Our integrated approach ensures flawless execution and unforgettable experiences.
           </p>
         </motion.div>
 
@@ -105,37 +105,36 @@ const Services = () => {
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.1 }}
-              className="group relative bg-navy-light border border-white/5 rounded-xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] flex flex-col"
+              className="group relative bg-navy-light/30 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(100,255,218,0.1)] flex flex-col"
             >
-              <div className="h-48 overflow-hidden relative flex-shrink-0">
-                <div className="absolute inset-0 bg-navy-dark/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+              {/* Gradient Border Glow */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+              <div className="h-56 overflow-hidden relative flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-accent/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 <img src={service.image} alt={service.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
               </div>
 
-              <div className="p-8 flex flex-col flex-grow">
-                <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
-                <p className="text-slate mb-6 text-sm leading-relaxed">{service.description}</p>
+              <div className="p-8 flex flex-col flex-grow relative z-20">
+                <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-accent transition-colors drop-shadow-md">{service.title}</h3>
+                <p className="text-slate-light mb-6 text-sm leading-relaxed font-light">{service.description}</p>
 
-                <div className="space-y-3 mb-6 flex-grow">
+                <div className="space-y-3 mb-8 flex-grow">
                   {service.features.slice(0, 3).map((feature) => (
-                    <div key={feature} className="flex items-start gap-3 text-sm text-slate-light">
-                      <CheckCircle className="text-accent flex-shrink-0 mt-0.5" size={16} />
+                    <div key={feature} className="flex items-start gap-3 text-sm text-slate-light/80 group-hover:text-white transition-colors">
+                      <CheckCircle className="text-accent/70 group-hover:text-accent flex-shrink-0 mt-0.5 transition-colors" size={16} />
                       <span>{feature}</span>
                     </div>
                   ))}
-                  {service.features.length > 3 && (
-                    <div className="text-xs text-slate-light/50 italic pl-7">
-                      + {service.features.length - 3} more features
-                    </div>
-                  )}
                 </div>
 
-                <div className="pt-6 border-t border-white/5 flex items-center justify-between mt-auto">
+                <div className="pt-6 border-t border-white/10 flex items-center justify-between mt-auto">
                   <button
                     onClick={() => openModal(service)}
-                    className="text-sm text-slate hover:text-accent transition-colors flex items-center gap-2 group/btn"
+                    className="text-sm font-medium text-white hover:text-accent transition-colors flex items-center gap-2 group/btn"
                   >
-                    Learn more
+                    <span className="border-b border-transparent group-hover/btn:border-accent transition-all">Learn more</span>
                     <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
