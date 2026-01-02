@@ -22,7 +22,7 @@ const Hero = () => {
     <>
       <section id="home" className="relative w-full lg:min-h-screen overflow-hidden bg-navy-dark">
         {/* Background Video/Gradient - Mobile: Top Scroll Section, Desktop: Absolute Background */}
-        <div className="relative w-full h-[100dvh] lg:absolute lg:inset-0 lg:h-full z-0">
+        <div className="relative w-full h-[100dvh] lg:absolute lg:inset-0 lg:h-full z-0 bg-navy-dark">
           {/* Desktop Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/90 via-navy-dark/70 to-navy-dark/90 z-10 hidden lg:block"></div>
           {/* Mobile Overlay - Gradient from top (subtle) to bottom (solid) for seamless transition */}
@@ -81,13 +81,13 @@ const Hero = () => {
                 </h1>
 
                 <p className="text-lg md:text-xl text-slate-light mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-md">
-                  From Bengaluru to the entire nation, we engineer unforgettable corporate events with cinematic video production, immersive audio landscapes, and dynamic lighting design. Your partner for flawless execution.
+                  We engineer the world's most immersive corporate experiences. From visionary product launches to large-scale global summits, we blend cinematic storytelling, precision audio, and dynamic lighting to define the future of event production.
                 </p>
 
                 <div className="flex flex-row items-center justify-center lg:justify-start gap-4">
                   <a
                     href="#contact"
-                    className="group relative px-6 py-3 bg-accent text-navy-dark font-bold rounded-lg overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] whitespace-nowrap"
+                    className="group relative px-8 py-4 bg-gradient-to-r from-accent to-accent/90 text-navy-dark font-bold rounded-lg overflow-hidden transition-all hover:shadow-[0_0_25px_rgba(100,255,218,0.5)] whitespace-nowrap"
                   >
                     <span className="relative z-10 flex items-center gap-2">
                       Get a Quote <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />

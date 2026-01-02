@@ -68,7 +68,7 @@ const Portfolio = ({ setIsPortfolioModalOpen }) => {
           categories[slug].thumbnail = '/assets/images/hero-poster.png';
         }
       }
-      setPortfolioCategories(Object.values(categories).filter(c => c.slug !== 'product-launches'));
+      setPortfolioCategories(Object.values(categories).filter(c => c.slug !== 'product-launches' && c.slug !== 'marketing-events'));
     };
     fetchMedia();
   }, []);
