@@ -22,7 +22,7 @@ const Hero = () => {
     <>
       <section id="home" className="relative w-full lg:min-h-screen overflow-hidden bg-navy-dark">
         {/* Background Video/Gradient - Mobile: Top Scroll Section, Desktop: Absolute Background */}
-        <div className="relative h-[100dvh] lg:absolute lg:inset-0 lg:h-full z-0">
+        <div className="relative w-full h-[100dvh] lg:absolute lg:inset-0 lg:h-full z-0">
           {/* Desktop Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/90 via-navy-dark/70 to-navy-dark/90 z-10 hidden lg:block"></div>
           {/* Mobile Overlay - Gradient from top (subtle) to bottom (solid) for seamless transition */}
@@ -33,7 +33,7 @@ const Hero = () => {
             loop
             muted
             playsInline
-            poster="/assets/images/hero-poster.png"
+            preload="auto"
             className="w-full h-full object-cover object-center opacity-100 lg:opacity-60"
           >
             <source src="/assets/videos/hero-loop.mp4" type="video/mp4" />
@@ -45,7 +45,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer lg:hidden group focus:outline-none"
+            className="absolute bottom-32 left-[35%] transform -translate-x-1/2 z-20 cursor-pointer lg:hidden group focus:outline-none"
           >
             <div className="flex flex-col items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_15px_rgba(100,255,218,0.3)] hover:bg-white/20 transition-all duration-300 animate-pulse">
               <span className="text-white font-bold text-xs tracking-[0.2em] uppercase">Explore</span>
