@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const clientLogoModules = import.meta.glob('/public/assets/clients/*.{png,jpg,jpeg,svg,gif}');
+const clientLogoModules = import.meta.glob('/src/assets/clients/*.{png,jpg,jpeg,svg,gif}', { eager: true, query: '?url', import: 'default' });
 
 const Clients = () => {
   const [clientLogos, setClientLogos] = useState([]);
 
   useEffect(() => {
-    const fetchLogos = async () => {
-      const logoUrls = await Promise.all(
-        Object.keys(clientLogoModules).map(path => path.replace('/public', ''))
-      );
-      setClientLogos(logoUrls);
-    };
-    fetchLogos();
+    // Vite handles the URLs automatically with 'as: url'
+    const logos = Object.values(clientLogoModules);
+    setClientLogos(logos);
   }, []);
 
   if (clientLogos.length === 0) {
@@ -57,7 +53,7 @@ const Clients = () => {
                 <div className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-colors duration-300">
                   <img
                     src={logo}
-                    alt={`Client logo ${index + 1}`}
+                    alt={`${logo.split('/').pop().split('.')[0].replace(/[-_]/g, ' ')} logo - Trusted Client of RC Video Vision`}
                     className="h-16 w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
