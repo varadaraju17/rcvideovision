@@ -2,10 +2,14 @@
   RewriteEngine On
   RewriteBase /
 
-  # Force WWW (SEO Best Practice)
-  RewriteCond %{HTTP_HOST} !^www\. [NC]
-  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+  # FORCE HTTPS + WWW (Strict 301 Redirect)
+  # If host is NOT www.rcvideovision.in OR scheme is NOT https
+  RewriteCond %{HTTP_HOST} !^www\.rcvideovision\.in$ [NC,OR]
+  RewriteCond %{HTTPS} off
+  # Redirect to https://www.rcvideovision.in/REQUEST_URI
+  RewriteRule ^(.*)$ https://www.rcvideovision.in/$1 [R=301,L]
 
+  # SPA Routing (Don't touch existing files/folders)
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

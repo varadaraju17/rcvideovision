@@ -10,8 +10,8 @@ module.exports = {
         primary: "#020c1b",    // Dark Navy
         secondary: "#ccd6f6",  // Lightest Slate
         accent: {
-          DEFAULT: "#64ffda", // Electric Cyan
-          hover: "#4bdbc0",   // Slightly darker Cyan
+          DEFAULT: "#5FF2EA", // Neon Aqua
+          hover: "#3FD0C8",   // Richer Aqua for hover
         },
         surface: "#112240",    // Light Navy
         "surface-hover": "#233554",

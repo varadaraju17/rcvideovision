@@ -4,22 +4,22 @@ import { Mail, Phone, MapPin, Instagram, MessageCircle, Send } from 'lucide-reac
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-navy-dark relative overflow-hidden">
+    <section id="contact" className="py-12 lg:py-32 bg-navy-dark relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-navy-light/30 skew-x-12 transform origin-top-right pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-20"
         >
-          <h2 className="text-3xl lg:text-5xl font-heading font-bold text-white mb-6">Get In Touch</h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-slate max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4 md:mb-6">Get In Touch</h2>
+          <div className="w-20 md:w-24 h-1 bg-accent mx-auto rounded-full mb-4 md:mb-6"></div>
+          <p className="text-base md:text-lg text-slate max-w-2xl mx-auto">
             Ready to elevate your next corporate event? Contact us today for a consultation.
           </p>
         </motion.div>
@@ -31,7 +31,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-3 bg-navy-light/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5 shadow-xl"
+            className="lg:col-span-3 bg-navy-light/50 backdrop-blur-sm p-5 md:p-8 rounded-2xl border border-white/5 shadow-xl"
           >
             <form action="/send-email.php" method="post" className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -39,7 +39,7 @@ const Contact = () => {
                   <label className="text-xs text-slate-light font-medium ml-1">Full Name</label>
                   <input
                     type="text" name="name" required
-                    className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
+                    className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-base md:text-sm"
                     placeholder="John Doe"
                   />
                 </div>
@@ -47,7 +47,7 @@ const Contact = () => {
                   <label className="text-xs text-slate-light font-medium ml-1">Email Address</label>
                   <input
                     type="email" name="email" required
-                    className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
+                    className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-base md:text-sm"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -58,7 +58,7 @@ const Contact = () => {
                   <label className="text-xs text-slate-light font-medium ml-1">Phone Number</label>
                   <input
                     type="tel" name="phone"
-                    className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
+                    className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-base md:text-sm"
                     placeholder="+1 (234) 567-890"
                   />
                 </div>
@@ -66,7 +66,7 @@ const Contact = () => {
                   <label className="text-xs text-slate-light font-medium ml-1">Event Type</label>
                   <select
                     name="event_type"
-                    className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none text-sm"
+                    className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none text-base md:text-sm"
                   >
                     <option>Select Event Type</option>
                     <option>Conference</option>
@@ -83,7 +83,7 @@ const Contact = () => {
                 <label className="text-xs text-slate-light font-medium ml-1">Message</label>
                 <textarea
                   name="message" rows="3" required
-                  className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none text-sm"
+                  className="w-full bg-navy-dark border border-white/10 rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none text-base md:text-sm"
                   placeholder="Tell us about your event requirements..."
                 ></textarea>
               </div>

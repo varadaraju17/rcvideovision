@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Modal from 'react-modal';
 import Masonry from 'react-masonry-css';
 import { X, ZoomIn, ArrowRight, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import SpotlightCard from './ui/SpotlightCard';
 
 // Helper to format folder names into titles
 const formatCategoryName = (slug) => {
@@ -136,58 +137,59 @@ const Portfolio = ({ setIsPortfolioModalOpen }) => {
   };
 
   return (
-    <section id="portfolio" className="py-20 lg:py-32 bg-navy-light relative">
-      <div className="container mx-auto px-6">
+    <section id="portfolio" className="py-12 lg:py-32 bg-navy-light relative">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-20"
+          className="text-center mb-10 md:mb-20"
         >
-          <h2 className="text-3xl lg:text-5xl font-heading font-bold text-white mb-6">Our Work</h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-slate max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4 md:mb-6">Our Work</h2>
+          <div className="w-20 md:w-24 h-1 bg-accent mx-auto rounded-full mb-4 md:mb-6"></div>
+          <p className="text-base md:text-lg text-slate max-w-3xl mx-auto">
             Explore our work across different event categories to see how we bring visions to life.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioCategories.map((category, index) => (
-            <motion.div
+            <SpotlightCard
               key={category.slug}
-              custom={index}
-              variants={cardVariants}
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true, amount: 0.1 }}
-              className="group relative bg-navy-light/30 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(100,255,218,0.1)] flex flex-col cursor-pointer"
+              className="group bg-navy-light/30 backdrop-blur-md border border-white/10 rounded-2xl cursor-pointer flex flex-col h-full hover:shadow-[0_0_30px_rgba(100,255,218,0.1)] transition-all duration-500"
               onClick={() => openModal(category)}
             >
-              {/* Gradient Border Glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-              {/* Image Section */}
-              <div className="h-56 overflow-hidden relative flex-shrink-0">
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-transparent z-10"></div>
-                <div className="absolute inset-0 bg-accent/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                <img src={category.thumbnail} alt={category.name} loading="lazy" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
-              </div>
-
-              {/* Content Section */}
-              <div className="p-8 flex flex-col flex-grow relative z-20">
-                <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-accent transition-colors drop-shadow-md">{category.name}</h3>
-
-                <div className="pt-6 border-t border-white/10 flex items-center justify-between mt-auto">
-                  <button
-                    className="text-sm font-medium text-white hover:text-accent transition-colors flex items-center gap-2 group/btn"
-                  >
-                    <span className="border-b border-transparent group-hover/btn:border-accent transition-all">View Gallery</span>
-                    <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+              <motion.div
+                custom={index}
+                variants={cardVariants}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.1 }}
+                className="flex flex-col h-full"
+              >
+                {/* Image Section */}
+                <div className="h-56 overflow-hidden relative flex-shrink-0">
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-transparent z-10"></div>
+                  <div className="absolute inset-0 bg-accent/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                  <img src={category.thumbnail} alt={category.name} loading="lazy" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
                 </div>
-              </div>
-            </motion.div>
+
+                {/* Content Section */}
+                <div className="p-8 flex flex-col flex-grow relative z-20">
+                  <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-accent transition-colors drop-shadow-md">{category.name}</h3>
+
+                  <div className="pt-6 border-t border-white/10 flex items-center justify-between mt-auto">
+                    <button
+                      className="text-sm font-medium text-white hover:text-accent transition-colors flex items-center gap-2 group/btn"
+                    >
+                      <span className="border-b border-transparent group-hover/btn:border-accent transition-all">View Gallery</span>
+                      <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

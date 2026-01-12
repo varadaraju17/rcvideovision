@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const NavLink = ({ to, children }) => (
   <Link to={to} className="relative group text-lg md:text-sm font-medium py-2 transition-colors duration-300">
-    <span className="text-slate-light group-hover:text-accent">{children}</span>
-    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform ease-out duration-300 origin-left"></span>
+    <span className="text-slate-light group-hover:text-[#5FF2EA]">{children}</span>
+    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#5FF2EA] transform scale-x-0 group-hover:scale-x-100 transition-transform ease-out duration-300 origin-left"></span>
   </Link>
 );
 
@@ -38,13 +38,15 @@ export default function Header({ isPortfolioModalOpen }) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-3 glass' : 'py-6 bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-[#5FF2EA]/10 ${isScrolled
+          ? 'py-3 bg-navy-dark/90 backdrop-blur-2xl shadow-[0_4px_30px_rgba(95,242,234,0.1)]'
+          : 'py-4 md:py-6 bg-transparent'
           }`}
       >
-        <div className="container mx-auto px-6 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-3 group">
-            <img src="/assets/images/logo.png" alt="RC Video Vision Logo" className="h-10 w-auto group-hover:scale-105 transition-transform duration-300" />
-            <span className="font-heading font-bold text-xl text-white tracking-wide">RC Video Vision</span>
+        <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+          <Link to="/" className="flex items-center gap-2 md:gap-3 group">
+            <img src="/assets/images/logo.png" alt="RC Video Vision Logo" className="h-8 md:h-10 w-auto group-hover:scale-105 transition-transform duration-300" />
+            <span className="font-heading font-bold text-lg md:text-xl text-white tracking-wide">RC Video Vision</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -78,11 +80,11 @@ export default function Header({ isPortfolioModalOpen }) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-0 bg-navy-dark z-40 md:hidden flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 bg-navy-dark/90 backdrop-blur-xl z-50 md:hidden flex flex-col items-center justify-center gap-8"
             onClick={toggleMenu}
           >
             {navLinks}
-            <Link to="/contact" className="mt-4 px-8 py-3 rounded border border-accent text-accent font-bold hover:bg-accent/10 transition-all duration-300">
+            <Link to="/contact" className="mt-4 px-8 py-3 rounded-full border border-accent text-accent font-bold hover:bg-accent hover:text-navy-dark transition-all duration-300 shadow-[0_0_20px_rgba(100,255,218,0.2)]">
               Get a Quote
             </Link>
           </motion.div>
